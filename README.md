@@ -2,13 +2,13 @@ A cryptography utilities for golang
 
 ## Installation
 
-Add it to your go.mod with:
+This library requires Go 1.17 or newer; add it to your go.mod with:
 
     go get github.com/MedzikUser/libcrypto-go
 
 ## Examples
 
-### Hashing using PBKDF2
+Hashing using PBKDF2
 
 ```go
 // example data
@@ -23,7 +23,7 @@ hash256 := hash.Pbkdf2Hash256(password, salt, iterations)
 hash512 := hash.Pbkdf2Hash512(password, salt, iterations)
 ```
 
-### AES Encryption
+AES Encryption
 
 ```go
 // example data
