@@ -13,12 +13,12 @@ import (
 // Example usage:
 //
 //	saltSize := 16
-//	salt, err := GenerateSalt(saltSize)
+//	salt, err := libcrypto.GenerateSalt(saltSize)
 //	if err != nil {
 //		panic(err)
 //	}
 //
-//	hash := Pbkdf2Hash256("password", salt, 100000)
+//	passwordHash := hash.Pbkdf2Hash256("password", salt, 100000)
 func Pbkdf2Hash256(password string, salt []byte, iter int) string {
 	// convert password string to byte slice
 	passwordBytes := []byte(password)
@@ -40,7 +40,7 @@ func Pbkdf2Hash256(password string, salt []byte, iter int) string {
 //		panic(err)
 //	}
 //
-//	hash := Pbkdf2Hash512("password", salt, 100000)
+//	passwordHash := hash.Pbkdf2Hash512("password", salt, 100000)
 func Pbkdf2Hash512(password string, salt []byte, iter int) string {
 	// convert password string to byte slice
 	passwordBytes := []byte(password)

@@ -19,12 +19,12 @@ import (
 //	}
 //
 //	// compute a 256-bit password hash with salt and 100000 iterations
-//	key := libcrypto.Pbkdf2Hash256("password", salt, 100000)
+//	key := hash.Pbkdf2Hash256("password", salt, 100000)
 //
 //	clearText := "test to encrypt"
 //
 //	// encrypt the clear text
-//	cipherText, err := EncryptAesCbc(key, clearText)
+//	cipherText, err := aes.EncryptAesCbc(key, clearText)
 //	if err != nil {
 //		panic(err)
 //	}
@@ -71,7 +71,7 @@ func EncryptAesCbc(key string, clearText string) (string, error) {
 //	cipherText := "cipher text..."
 //
 //	// decrypt the cipher text
-//	cipherText, err := DecryptAesCbc(key, cipherText)
+//	cipherText, err := aes.DecryptAesCbc(key, cipherText)
 //	if err != nil {
 //		panic(err)
 //	}
