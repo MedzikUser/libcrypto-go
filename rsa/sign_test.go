@@ -14,12 +14,12 @@ func TestSign(t *testing.T) {
 
 	message := "hello world"
 
-	signature, err := rsa.SignRsa([]byte(message), privateKey)
+	signature, err := rsa.Sign(privateKey, message)
 	if err != nil {
 		t.Errorf("Failed to sign message: %v", err)
 	}
 
-	err = rsa.ValidateSignRsa([]byte(message), signature, publicKey)
+	err = rsa.ValidateSign(publicKey, message, signature)
 	if err != nil {
 		t.Errorf("Failed to verify message: %v", err)
 	}
