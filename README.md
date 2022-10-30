@@ -41,3 +41,36 @@ cipherText, err := aes.EncryptAesCbc(key, clearText)
 // decrypt the cipher text using AES-CBC algorithm
 decryptedText, err := aes.EncryptAesCbc(key, cipherText)
 ```
+
+RSA Signing
+
+```go
+// example data
+message := "hello world"
+
+// generate a new RSA key pair
+privateKey, publicKey, err := rsa.GenerateKey(2048)
+
+// sign the message
+signature, err := rsa.Sign(privateKey, message)
+
+// verify the signature
+err = rsa.ValidateSign(publicKey, message, signature)
+```
+
+RSA Encryption
+
+```go
+// example data
+clearText := "hello world"
+label := "some label"
+
+// generate a new RSA key pair
+privateKey, publicKey, err := rsa.GenerateKey(2048)
+
+// encrypt the clear text using RSA-OAEP algorithm
+cipherText, err := rsa.Encrypt(publicKey, clearText, label)
+
+// decrypt the cipher text using RSA-OAEP algorithm
+decryptedText, err := rsa.Decrypt(privateKey, cipherText, label)
+```
