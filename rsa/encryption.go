@@ -15,7 +15,7 @@ import (
 //	clearText := "hello world"
 //	label := "some label"
 //
-//	// load the private key
+//	// load the public key
 //	publicKeyPem := `-----BEGIN RSA PUBLIC KEY-----...-----END RSA PUBLIC KEY-----`
 //	publicKey, _ := rsa.PublicKeyFromPEM([]byte(publicKeyPEM))
 //
